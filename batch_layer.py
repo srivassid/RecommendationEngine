@@ -200,11 +200,11 @@ if __name__ == '__main__':
     df = create_df()
     rec_df = (recommendations(df=send_data(df)[0], cosine_sim=send_data(df)[1]))
 
-    client = client.Client('wss://account-cosmos-db.gremlin.cosmosdb.azure.com:443/', 'g',
-                           username="/dbs/GraphDB1/colls/MovieGraph3",
-                           password="np4uDpHJIdpY1JCWHJpLX1QRxFYxVVT4mnE55qIG3MmrFDoqKHmG7Spptp7dxx8LFLD5D6xeOsRjO1YMpyjZtA==",
-                           message_serializer=serializer.GraphSONSerializersV2d0()
-                           )
+    clien = client.Client('<your-account>', 'g',
+                                  username="<your-username>",
+                                  password="<your-password>",
+                                  message_serializer=serializer.GraphSONSerializersV2d0()
+                                  )
     print(time.time() - start)
     insert_graph(client, rec_df)
     create_edges(client, rec_df)

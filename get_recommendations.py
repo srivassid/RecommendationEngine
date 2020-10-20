@@ -16,9 +16,9 @@ def get_recommendation(cosmos_client, movie):
                 print(i['outV'].split('_')[0])
 
 if __name__ == '__main__':
-    cosmos_client = client.Client('wss://account-cosmos-db.gremlin.cosmosdb.azure.com:443/', 'g',
-                           username="/dbs/GraphDB1/colls/MovieGraph3",
-                           password="np4uDpHJIdpY1JCWHJpLX1QRxFYxVVT4mnE55qIG3MmrFDoqKHmG7Spptp7dxx8LFLD5D6xeOsRjO1YMpyjZtA==",
+    cosmos_client = client.Client('<your-account>', 'g',
+                           username="<your-username>",
+                           password="<your-password>",
                            message_serializer=serializer.GraphSONSerializersV2d0()
                            )
     movie = 'Sister'

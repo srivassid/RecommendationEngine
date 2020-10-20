@@ -152,9 +152,9 @@ def create_edges(client, df):
 
 
 if __name__ == '__main__':
-    account = 'wss://account-cosmos-db.gremlin.cosmosdb.azure.com:443/'
-    username = '/dbs/GraphDB1/colls/MovieGraph3'
-    password = 'np4uDpHJIdpY1JCWHJpLX1QRxFYxVVT4mnE55qIG3MmrFDoqKHmG7Spptp7dxx8LFLD5D6xeOsRjO1YMpyjZtA=='
+    account = '<your-account>'
+    username = '<your-username>'
+    password = '<your-passsword>'
     msg_serializer = serializer.GraphSONSerializersV2d0()
     cosmos_client = client.Client(account, 'g', username=username,
                                   password=password, message_serializer= msg_serializer)

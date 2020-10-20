@@ -9,9 +9,9 @@ import pandas as pd
 import logging, time
 from datetime import date, timedelta
 
-TOPIC_ENDPOINT = "movietopic1.westeurope-1.eventgrid.azure.net"
+TOPIC_ENDPOINT = "<your-topic>"
 
-EVENT_GRID_KEY = '0rX2S0JW6EhZ0pSYRGi1ZeDbn7baypPpMF0BYZg4of4='
+EVENT_GRID_KEY = '<your-key>'
 
 def get_data(type):
     sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
