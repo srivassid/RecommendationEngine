@@ -1,0 +1,6 @@
+azure-functions
+pandas
+gremlinpython
+SPARQLWrapper
+msrest
+azure-eventgrid

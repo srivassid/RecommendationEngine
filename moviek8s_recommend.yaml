@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moviek8s-recommend
+  labels:
+    app: moviek8s-recommend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moviek8s-recommend
+  template:
+    metadata:
+      labels:
+        app: moviek8s-recommend
+    spec:
+      containers:
+      - name: moviek8s-recommend
+        image: siddockerregistry.azurecr.io/movie_recommend:latest
+        command: ["python", "send_data_topic.py"]
+#        args: ["IngressCowBehaviorAgg36001.yaml"]
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "768Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+      imagePullSecrets:
+      - name: regcred
